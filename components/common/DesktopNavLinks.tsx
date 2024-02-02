@@ -15,6 +15,7 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { menus } from '@/constants/nav-items';
+import Link from 'next/link';
 
 export function DesktopNavLinks() {
   return (
@@ -41,14 +42,18 @@ export function DesktopNavLinks() {
               </NavigationMenuItem>
             ) : (
               <NavigationMenuItem>
-                {/* <Link href={menuItem.path} passHref> */}
-                <NavigationMenuLink
+                <Link
                   href={menuItem.path}
                   className={navigationMenuTriggerStyle()}
+                  // passHref
                 >
+                  {/* <NavigationMenuLink
+                  href={menuItem.path}
+                  className={navigationMenuTriggerStyle()}
+                > */}
                   {menuItem.title}
-                </NavigationMenuLink>
-                {/* </Link> */}
+                  {/* </NavigationMenuLink> */}
+                </Link>
               </NavigationMenuItem>
             )}
           </React.Fragment>
@@ -61,10 +66,26 @@ export function DesktopNavLinks() {
 const ListItem = React.forwardRef<
   React.ElementRef<'a'>,
   React.ComponentPropsWithoutRef<'a'>
->(({ className, title, children, ...props }, ref) => {
+>(({ className, title, href, children, ...props }, ref) => {
   return (
     <li>
-      <NavigationMenuLink asChild>
+      <Link
+        ref={ref}
+        href={href as string}
+        className={cn(
+          'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+          className
+        )}
+        {...props}
+      >
+        <div className="text-sm font-medium leading-none">
+          {title}
+        </div>
+        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          {children}
+        </p>
+      </Link>
+      {/* <NavigationMenuLink asChild>
         <a
           ref={ref}
           className={cn(
@@ -80,7 +101,7 @@ const ListItem = React.forwardRef<
             {children}
           </p>
         </a>
-      </NavigationMenuLink>
+      </NavigationMenuLink> */}
     </li>
   );
 });
