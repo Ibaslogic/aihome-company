@@ -1,12 +1,8 @@
 import type { Metadata } from 'next';
-import { Inter, Outfit } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/common/Header';
 import HeaderMobile from '@/components/common/HeaderMobile';
 import Footer from '@/components/common/Footer';
-
-const font = Inter({ subsets: ['latin'] });
-// const font = Outfit({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,17 +15,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${font.className}`}>
-        <div className="flex flex-col min-h-screen">
-          <div className="flex-grow">
-            <Header />
-            <HeaderMobile />
-            <main>{children}</main>
-          </div>
-          <Footer />
-        </div>
-      </body>
-    </html>
+    <div className="flex flex-col min-h-screen">
+      <div className="flex-grow">
+        <Header />
+        <HeaderMobile />
+        <main>{children}</main>
+      </div>
+      <Footer />
+    </div>
   );
 }

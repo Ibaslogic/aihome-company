@@ -25,7 +25,7 @@ const Heading = ({
       ) : component === 'h2' ? (
         <h2
           className={cn(
-            'tracking-[0.48px] font-black text-[#2b2b2b] text-lg',
+            'tracking-[0.48px] font-black text-[#2b2b2b] text-2xl mb-7',
             className
           )}
         >
@@ -34,7 +34,7 @@ const Heading = ({
       ) : (
         <h3
           className={cn(
-            'text-left text-base mb-2 font-bold',
+            'text-left text-xl mb-2 font-bold',
             className
           )}
         >

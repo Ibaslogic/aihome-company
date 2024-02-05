@@ -7,6 +7,11 @@ const nextConfig = {
         hostname: '**.zillowstatic.com',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: '**.sanity.io',
+        port: '',
+      },
     ],
   },
 };

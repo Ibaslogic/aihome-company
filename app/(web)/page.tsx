@@ -1,3 +1,4 @@
+import FeaturedNews from '@/components/FeaturedNews';
 import AboutSummary from '@/components/home/AboutSummary';
 import Hero from '@/components/home/Hero';
 import HighlightCoreValue from '@/components/home/HighlightCoreValue';
@@ -7,7 +8,8 @@ export default function Home() {
     <div>
       <Hero />
       <AboutSummary />
-      <HighlightCoreValue />
+      <FeaturedNews />
+      {/* <HighlightCoreValue /> */}
     </div>
   );
 }

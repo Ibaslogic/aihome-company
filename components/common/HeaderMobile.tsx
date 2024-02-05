@@ -1,6 +1,12 @@
 'use client';
 
-import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import React, {
+  Fragment,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -15,7 +21,7 @@ type MenuItemWithSubMenuProps = {
   toggleOpen: () => void;
 };
 
-const sidebar = {
+const dropdownDiv = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 100% 0)`,
     transition: {
@@ -40,6 +46,11 @@ const HeaderMobile = () => {
   const { height } = useDimensions(containerRef);
   const [isOpen, toggleOpen] = useCycle(false, true);
 
+  // disable scrolling if slide menu is open
+  // useEffect(() => {
+  //   document.body.className = isOpen ? 'overflow-hidden' : '';
+  // }, [isOpen]);
+
   return (
     <motion.nav
       initial={false}
@@ -51,18 +62,18 @@ const HeaderMobile = () => {
       ref={containerRef}
     >
       <motion.div
-        className="absolute inset-0 right-0 w-full bg-[#f4f4f4]"
-        variants={sidebar}
+        className="fixed inset-0 right-0 w-full bg-[#f4f4f4]"
+        variants={dropdownDiv}
       />
       <motion.ul
         variants={variants}
-        className="absolute grid w-full gap-3 px-10 py-16"
+        className="fixed overflow-y-auto h-screen grid w-full gap-3 px-10 py-16"
       >
         {menus.map((item, idx) => {
           const isLastItem = idx === menus.length - 1; // Check if it's the last item
 
           return (
-            <div key={idx}>
+            <Fragment key={idx}>
               {item.submenu ? (
                 <MenuItemWithSubMenu
                   item={item}
@@ -85,7 +96,7 @@ const HeaderMobile = () => {
               {!isLastItem && (
                 <MenuItem className="my-3 h-px w-full bg-gray-300" />
               )}
-            </div>
+            </Fragment>
           );
         })}
       </motion.ul>
@@ -158,27 +169,25 @@ const MenuItemWithSubMenu = ({
   const [subMenuOpen, setSubMenuOpen] = useState(false);
 
   return (
-    <>
-      <MenuItem>
-        <button
-          className="flex w-full text-2xl"
-          onClick={() => setSubMenuOpen(!subMenuOpen)}
-        >
-          <div className="flex flex-row justify-between w-full items-center">
-            <span
-              className={`${
-                pathname.includes(item.path) ? 'font-bold' : ''
-              }`}
-            >
-              {item.title}
-            </span>
-            <div className={`${subMenuOpen && 'rotate-180'}`}>
-              <ChevronDown width="24" height="24" />
-            </div>
+    <MenuItem>
+      <button
+        className="flex w-full text-2xl"
+        onClick={() => setSubMenuOpen(!subMenuOpen)}
+      >
+        <div className="flex flex-row justify-between w-full items-center">
+          <span
+            className={`${
+              pathname.includes(item.path) ? 'font-bold' : ''
+            }`}
+          >
+            {item.title}
+          </span>
+          <div className={`${subMenuOpen && 'rotate-180'}`}>
+            <ChevronDown width="24" height="24" />
           </div>
-        </button>
-      </MenuItem>
-      <div className="mt-2 ml-2 flex flex-col space-y-2">
+        </div>
+      </button>
+      <ul className="mt-2 ml-2 flex flex-col space-y-2">
         {subMenuOpen && (
           <>
             {item.subMenuItems?.map((subItem, subIdx) => {
@@ -198,8 +207,8 @@ const MenuItemWithSubMenu = ({
             })}
           </>
         )}
-      </div>
-    </>
+      </ul>
+    </MenuItem>
   );
 };
 
