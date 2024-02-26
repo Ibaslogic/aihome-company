@@ -41,6 +41,7 @@ export type Author = {
 export type Category = {
   _id: string;
   name: string;
+  slug: string;
 };
 
 export type Post = {
@@ -51,6 +52,7 @@ export type Post = {
   content: Array<ContentBlock>;
   _id: string;
   title: string;
+  excerpt: string;
   featuredImage: string;
   body: string;
   author: Author;
@@ -58,3 +60,45 @@ export type Post = {
 };
 
 export type PostsArray = Array<Post>;
+
+export type CoreValues = {
+  _id: string;
+  title: string;
+  image: string;
+  content: string;
+};
+
+export type Testimonials = {
+  _id: string;
+  title: string;
+  name: string;
+  description: string;
+};
+
+export type Person = {
+  _id: string;
+  title: string;
+  name: string;
+  slug: string;
+  image: string;
+  bio: Array<ContentBlock>;
+};
+
+export type AboutProps = {
+  _id: string;
+  title: string;
+  image: string;
+  content: Array<ContentBlock>;
+};
+
+export type PricingPlan = {
+  _id: string;
+  title: string;
+  price: string;
+  featureHighlights: string;
+  description: string;
+  features: string[];
+  support: {
+    chatbot: boolean;
+  };
+};

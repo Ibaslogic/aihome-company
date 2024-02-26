@@ -29,7 +29,7 @@ export function DesktopNavLinks() {
                   {menuItem.title}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[500px] gap-3 p-4 md:w-[650px] md:grid-cols-2">
+                  <ul className="grid w-[550px] gap-3 p-4 md:w-[730px] md:grid-cols-2">
                     {menuItem.subMenuItems?.map((subItem) => (
                       <ListItem
                         key={subItem.title}

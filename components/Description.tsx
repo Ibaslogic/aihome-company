@@ -10,7 +10,7 @@ const Description = ({
   return (
     <p
       className={cn(
-        'tracking-[0.48px] text-[#434242] text-base',
+        'text-center font-normal text-neutral-800 ',
         className
       )}
     >

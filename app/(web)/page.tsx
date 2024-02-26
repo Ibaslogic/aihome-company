@@ -1,7 +1,8 @@
 import FeaturedNews from '@/components/FeaturedNews';
 import AboutSummary from '@/components/home/AboutSummary';
+import ContactUsNow from '@/components/home/ContactUsNow';
 import Hero from '@/components/home/Hero';
-import HighlightCoreValue from '@/components/home/HighlightCoreValue';
+import Testimonials from '@/components/home/Testimonials';
 
 export default function Home() {
   return (
@@ -9,7 +10,8 @@ export default function Home() {
       <Hero />
       <AboutSummary />
       <FeaturedNews />
-      {/* <HighlightCoreValue /> */}
+      <Testimonials />
+      <ContactUsNow />
     </div>
   );
 }

@@ -8,10 +8,7 @@ type ContainerProps = {
 const Container = ({ className, ...props }: ContainerProps) => {
   return (
     <div
-      className={cn(
-        'max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8',
-        className
-      )}
+      className={cn('mx-auto px-4 sm:px-6 lg:px-8', className)}
       {...props}
     />
   );

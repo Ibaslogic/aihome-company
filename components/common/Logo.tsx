@@ -11,7 +11,7 @@ const Logo = ({ className, ...props }: LogoProps) => {
   return (
     <Link href="/">
       <span
-        className={cn('font-bold text-xl flex', className)}
+        className={cn('font-medium text-xl flex', className)}
         {...props}
       >
         AiHomeGroup

@@ -47,9 +47,9 @@ const HeaderMobile = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
 
   // disable scrolling if slide menu is open
-  // useEffect(() => {
-  //   document.body.className = isOpen ? 'overflow-hidden' : '';
-  // }, [isOpen]);
+  useEffect(() => {
+    document.body.className = isOpen ? 'overflow-hidden' : '';
+  }, [isOpen]);
 
   return (
     <motion.nav
@@ -67,7 +67,11 @@ const HeaderMobile = () => {
       />
       <motion.ul
         variants={variants}
-        className="fixed overflow-y-auto h-screen grid w-full gap-3 px-10 py-16"
+        className={
+          isOpen
+            ? 'fixed overflow-y-auto h-screen grid w-full gap-3 px-10 py-16'
+            : ''
+        }
       >
         {menus.map((item, idx) => {
           const isLastItem = idx === menus.length - 1; // Check if it's the last item
@@ -110,7 +114,7 @@ export default HeaderMobile;
 const MenuToggle = ({ toggle }: { toggle: any }) => (
   <button
     onClick={toggle}
-    className="pointer-events-auto absolute right-4 top-[14px] z-30"
+    className="pointer-events-auto absolute right-4 top-[23px] z-30"
   >
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path

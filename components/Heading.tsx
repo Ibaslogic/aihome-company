@@ -16,7 +16,7 @@ const Heading = ({
       {component === 'h1' ? (
         <h1
           className={cn(
-            'font-black text-3xl text-[#2b2b2b]',
+            'font-black bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-500 bg-opacity-50',
             className
           )}
         >
@@ -25,7 +25,7 @@ const Heading = ({
       ) : component === 'h2' ? (
         <h2
           className={cn(
-            'tracking-[0.48px] font-black text-[#2b2b2b] text-2xl mb-7',
+            'bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-500 bg-opacity-50',
             className
           )}
         >
@@ -34,7 +34,7 @@ const Heading = ({
       ) : (
         <h3
           className={cn(
-            'text-left text-xl mb-2 font-bold',
+            'bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-500 bg-opacity-50',
             className
           )}
         >

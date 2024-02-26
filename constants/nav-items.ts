@@ -57,4 +57,8 @@ export const menus: NavItem[] = [
       { title: 'Flexible Work', path: 'flexible-work' },
     ],
   },
+  {
+    title: 'Pricing',
+    path: '/pricing',
+  },
 ];

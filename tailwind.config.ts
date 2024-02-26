@@ -62,40 +62,110 @@ const config = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
-      keyframes: {
-        'fade-in': {
-          from: {
-            opacity: '0',
-          },
-          to: {
-            opacity: '1',
-          },
-        },
-        marquee: {
-          '100%': {
-            transform: 'translateY(-50%)',
-          },
-        },
-        'spin-reverse': {
-          to: {
-            transform: 'rotate(-360deg)',
-          },
-        },
-      },
+
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'fade-in': 'fade-in 0.5s linear forwards',
-        marquee: 'marquee var(--marquee-duration) linear infinite',
-        'spin-slow': 'spin 4s linear infinite',
-        'spin-slower': 'spin 6s linear infinite',
-        'spin-reverse': 'spin-reverse 1s linear infinite',
-        'spin-reverse-slow': 'spin-reverse 4s linear infinite',
-        'spin-reverse-slower': 'spin-reverse 6s linear infinite',
+
+        spotlight: 'spotlight 2s ease .75s 1 forwards',
+        shimmer: 'shimmer 2s linear infinite',
+        scroll:
+          'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
       },
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
+        spotlight: {
+          '0%': {
+            opacity: '0',
+            transform: 'translate(-72%, -62%) scale(0.5)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translate(-50%,-40%) scale(1)',
+          },
+        },
+        shimmer: {
+          from: {
+            backgroundPosition: '0 0',
+          },
+          to: {
+            backgroundPosition: '-200% 0',
+          },
+        },
+        scroll: {
+          to: {
+            transform: 'translate(calc(-50% - 0.5rem))',
+          },
+        },
+      },
+      typography: () => ({
+        DEFAULT: {
+          css: {
+            color: '#333',
+            a: {
+              textDecoration: 'none',
+              borderBottom: '1px solid #005bb3',
+              fontWeight: '400',
+              '&:hover': {
+                borderColor: '#005bb3',
+              },
+            },
+            p: {
+              lineHeight: '1.6',
+              marginBottom: '16px',
+              fontSize: '15.4px',
+              fontWeight: '400',
+            },
+            h1: {
+              fontWeight: '700',
+            },
+            'h2,h3': {
+              marginTop: '40px',
+              marginBottom: '25px',
+              lineHeight: '1.3333333',
+              color: '#1a2c47',
+              fontWeight: '600',
+            },
+            hr: {
+              marginTop: '1.5rem',
+              marginBottom: '1.5rem',
+            },
+            ul: {
+              lineHeight: '28px',
+              fontSize: '16px',
+            },
+            'ul > li::marker': {
+              color: '#808080',
+            },
+            'ol > li::marker': {
+              color: '#808080',
+            },
+            blockquote: {
+              fontWeight: '400',
+              fontStyle: 'normal',
+              borderColor: '#3182ce',
+              backgroundColor: '#ebf8ff',
+              padding: '1rem',
+            },
+            'blockquote p': {
+              margin: '0',
+            },
+          },
+        },
+      }),
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('@tailwindcss/typography'),
+  ],
 } satisfies Config;
 
 export default config;
