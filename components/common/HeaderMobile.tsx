@@ -69,7 +69,7 @@ const HeaderMobile = () => {
         variants={variants}
         className={
           isOpen
-            ? 'fixed overflow-y-auto h-screen grid w-full gap-3 px-10 pt-32 pb-48'
+            ? 'fixed overflow-y-auto h-screen grid w-full gap-3 px-10 pt-24 pb-56'
             : ''
         }
       >
