@@ -69,7 +69,7 @@ const HeaderMobile = () => {
         variants={variants}
         className={
           isOpen
-            ? 'fixed overflow-y-auto h-screen grid w-full gap-3 px-10 py-16'
+            ? 'fixed overflow-y-auto h-screen grid w-full gap-3 px-10 pt-32 pb-48'
             : ''
         }
       >
@@ -89,7 +89,7 @@ const HeaderMobile = () => {
                     href={item.path}
                     onClick={() => toggleOpen()}
                     className={`flex w-full text-2xl ${
-                      item.path === pathname ? 'font-bold' : ''
+                      item.path === pathname ? 'font-semibold' : ''
                     }`}
                   >
                     {item.title}
@@ -181,7 +181,7 @@ const MenuItemWithSubMenu = ({
         <div className="flex flex-row justify-between w-full items-center">
           <span
             className={`${
-              pathname.includes(item.path) ? 'font-bold' : ''
+              pathname.includes(item.path) ? 'font-semibold' : ''
             }`}
           >
             {item.title}
@@ -191,7 +191,7 @@ const MenuItemWithSubMenu = ({
           </div>
         </div>
       </button>
-      <ul className="mt-2 ml-2 flex flex-col space-y-2">
+      <ul className="mt-2 ml-2 flex flex-col space-y-4">
         {subMenuOpen && (
           <>
             {item.subMenuItems?.map((subItem, subIdx) => {
@@ -200,8 +200,8 @@ const MenuItemWithSubMenu = ({
                   <Link
                     href={subItem.path}
                     onClick={() => toggleOpen()}
-                    className={` ${
-                      subItem.path === pathname ? 'font-bold' : ''
+                    className={`block ${
+                      subItem.path === pathname ? 'font-semibold' : ''
                     }`}
                   >
                     {subItem.title}
