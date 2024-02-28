@@ -5,36 +5,33 @@ import Container from '../common/Container';
 
 const AboutSummary = () => {
   return (
-    <section
-      className=" mt-10 md:py-10 w-full
-    rounded-3xl
-  
-  "
-    >
-      <Container className="max-w-screen-lg">
+    <section className="w-full rounded-3xl py-20">
+      <Container className="max-w-screen-lg prose">
         <div className="md:flex gap-3">
           <div className="flex-1">
             <Heading
               title="OUR COMPANY"
-              component="h3"
-              className="font-semibold"
+              component="h2"
+              className="font-semibold mt-0 text-base mb-1"
             />
-            <p className="text-3xl font-semibold mb-6 md:mb-0">
-              AiHomeSearch is your trusted source for transforming
-              real estate
-            </p>
+            <Heading
+              title="We are Your Trusted Source for Transforming Real Estate"
+              component="h3"
+              className="font-semibold mt-0 text-3xl pb-1"
+            />
           </div>
           <div className="flex-1">
-            <p className="text-base leading-7">
-              AiHomeSearch are a PropTech company based in Brisbane,
+            <Description
+              text="AiHomeSearch are a PropTech company based in Brisbane,
               Australia. Our company, AiHomeSearch, aims to
               revolutionize the real estate industry worldwide by
               leveraging advanced AI technologies for a
               customer-centric approach. We use state-of-the-art
               computer vision, deep learning, machine learning, and AI
               to bridge the gap in the industry and offer an unmatched
-              platform like that of our competitors.
-            </p>
+              platform like that of our competitors."
+              className="text-base leading-7 m-0"
+            />
             <p className="mt-3 text-black/65">
               <Link
                 href="/about-us"

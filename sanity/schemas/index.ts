@@ -8,6 +8,7 @@ import leadership from './leadership';
 import boardOfDirectors from './board-of-directors';
 import aboutUs from './about-us';
 import pricingPlan from './pricing-plan';
+import socials from './socials';
 
 export const schemaTypes = [
   author,
@@ -20,4 +21,5 @@ export const schemaTypes = [
   boardOfDirectors,
   aboutUs,
   pricingPlan,
+  socials,
 ];

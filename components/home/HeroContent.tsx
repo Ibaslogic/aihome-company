@@ -22,11 +22,12 @@ const HeroContent = () => {
     <div className="flex md:items-center md:justify-center antialiased bg-grid-white/[0.02]">
       <Spotlight className="hidden md:flex md:left-80" fill="white" />
       <Container className="relative pt-20 mt-12">
-        <h1 className="text-4xl pb-5 font-semibold md:text-7xl text-center  bg-clip-text text-transparent  bg-gradient-to-b from-neutral-50 to bg-neutral-400 bg-opacity-50">
-          The AI platform that <br /> manages IT projects
+        <h1 className="text-4xl pb-5 font-semibold md:text-7xl text-center  bg-clip-text text-transparent  bg-gradient-to-b from-neutral-50 to bg-neutral-400 bg-opacity-50 max-w-lg sm:max-w-full">
+          The AI platform <span className="sm:block" /> reshaping real
+          estate
         </h1>
 
-        <p className="mt-4 text-lg font-normal text-neutral-300 max-w-lg text-center mx-auto px-4">
+        <p className="mt-4 text-base sm:text-lg font-normal text-neutral-300 max-w-lg text-center mx-auto px-4">
           We aim to revolutionize the real estate industry worldwide
           by leveraging advanced AI technologies for a
           customer-centric approach.

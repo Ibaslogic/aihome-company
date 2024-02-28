@@ -6,6 +6,7 @@ import {
   Post,
   PostsArray,
   PricingPlan,
+  Social,
   Testimonials,
 } from '@/types';
 
@@ -159,4 +160,17 @@ export async function getPricingPlan(): Promise<PricingPlan[]> {
     }
   `);
   return pricing;
+}
+
+export async function getSocials(): Promise<Social[]> {
+  const socials = await client.fetch(groq`
+    *[_type == "social"] { 
+      _id,
+      platform,
+      username,
+      url,
+      isActive,
+    }
+  `);
+  return socials;
 }

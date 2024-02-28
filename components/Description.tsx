@@ -8,12 +8,7 @@ const Description = ({
   className?: string;
 }) => {
   return (
-    <p
-      className={cn(
-        'text-center font-normal text-neutral-800 ',
-        className
-      )}
-    >
+    <p className={cn('font-normal text-neutral-800 ', className)}>
       {text}
     </p>
   );

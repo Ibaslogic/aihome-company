@@ -102,3 +102,11 @@ export type PricingPlan = {
     chatbot: boolean;
   };
 };
+
+export type Social = {
+  _id: string;
+  platform: string;
+  username: string;
+  url: string;
+  isActive?: string;
+};

@@ -51,7 +51,7 @@ const CategoryPage = async ({ params: { slug } }: Params) => {
         <div className="mb-6">
           <GoBack />
         </div>
-        <h1 className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-500 bg-opacity-50 pb-12 text-4xl md:text-5xl">
+        <h1 className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-500 bg-opacity-50 pb-12 text-4xl md:text-[2.5rem]">
           Category: <span className="capitalize">{category}</span>
         </h1>
         <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">

@@ -14,7 +14,7 @@ const CoreValueCard = ({
   return (
     <div className="w-full h-full min-w-[300px] text-white">
       <div className="group rounded-[8px] overflow-hidden relative pb-[66%] h-0">
-        <div className="after:absolute after:left-0 after:top-0 after:w-full after:h-full inline-block after:bg-[#000] after:opacity-30 group-hover:after:opacity-80">
+        <div className="after:absolute after:left-0 after:top-0 after:w-full after:h-full inline-block after:bg-[#000] after:opacity-20 group-hover:after:opacity-80">
           <Image
             src={image}
             fill

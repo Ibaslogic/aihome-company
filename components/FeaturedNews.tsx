@@ -10,18 +10,18 @@ const FeaturedNews = async () => {
 
   return (
     <section
-      className="mt-10 md:py-10 bg-[#f6f5f4] w-full
-    rounded-3xl"
+      className="bg-[#f6f5f4] w-full
+    rounded-3xl py-20"
     >
       <Container className="max-w-screen-lg">
         <Heading
           title="From our blog"
           component="h2"
-          className="text-center py-10 md:pb-8 text-4xl md:text-5xl"
+          className="text-center text-4xl md:text-[2.5rem]"
         />
         <Description
           text="Discover the latest in real estate trends and expert insights. Stay informed, stay ahead"
-          className="mt-4 text-lg max-w-lg mx-auto"
+          className="mt-4 text-lg max-w-lg mx-auto text-center"
         />
 
         <ul className="mt-12 grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
