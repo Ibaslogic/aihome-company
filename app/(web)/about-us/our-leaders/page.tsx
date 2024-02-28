@@ -15,7 +15,8 @@ const OurLeadersPage = () => {
         />
         <Container className="relative py-20">
           <h1 className="text-4xl pb-5 font-semibold md:text-7xl text-center  bg-clip-text text-transparent  bg-gradient-to-b from-neutral-50 to bg-neutral-400 bg-opacity-50">
-            Leadership team and <br /> board of directors
+            Leadership team and <span className="sm:block" /> board of
+            directors
           </h1>
 
           <p className="mt-4 text-base font-normal  text-neutral-300 max-w-3xl text-center mx-auto px-4">
